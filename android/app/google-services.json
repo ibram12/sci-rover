@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "287119367806",
+    "project_id": "rover-b40ba",
+    "storage_bucket": "rover-b40ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287119367806:android:9951944c792ae5fb0e022f",
+        "android_client_info": {
+          "package_name": "com.rover.roversci22"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "287119367806-odo772eq8oiva6e0jmdtvs90ag5rlmmn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxqApr7QmdwcrLFJwcaSctH7ynV8_B6MA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "287119367806-odo772eq8oiva6e0jmdtvs90ag5rlmmn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
