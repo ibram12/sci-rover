@@ -10,22 +10,27 @@ import 'screen/Sign/Sign_In.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-   runApp(await MyApp());
+  runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
-  bool vil = false;
-  getpref() async {
-    SharedPreferences Preferences = await SharedPreferences.getInstance();
-    vil = Preferences.getBool("vir")!;
-    return vil;
+Future<bool> getpref() async {
+  SharedPreferences Preferences = await SharedPreferences.getInstance();
+  if (Preferences.getBool("vir") == true) {
+    return true;
+  } else {
+    return false;
   }
-  void initState() {
-    // TODO: implement initState
+}
 
-   getpref();
-  }
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  late String emails, passwords;
 
   @override
   Widget build(BuildContext context) {
@@ -48,13 +53,16 @@ class MyApp extends StatelessWidget {
     );
   }
 
-
   Widget login(BuildContext context) {
-
-    switch (getpref()) {
-      case 'true':
-        return home_page();
-      s
+    if (getpref() == 'true') {
+      print(getpref());
+      return const home_page();
+    } else if (getpref() == 'false') {
+      print(getpref());
+      return const SignIn();
+    } else {
+      print(getpref());
+      return const SignIn();
     }
   }
 }

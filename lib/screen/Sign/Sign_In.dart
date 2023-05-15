@@ -1,4 +1,3 @@
-
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -17,11 +16,12 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   late String emails, passwords;
 
-  savepref(String email, String pass, bool vir) async {
+  savepref(String email, String pass) async {
     SharedPreferences Preferences = await SharedPreferences.getInstance();
     Preferences.setString("email", email);
     Preferences.setString("passwerd", pass);
-    Preferences.setBool("vir", vir);
+    Preferences.setBool("vir", true);
+    print(Preferences.getBool("vir"));
   }
 
   adduser1() async {
@@ -41,7 +41,8 @@ class _SignInState extends State<SignIn> {
           ),
         );
       } else {
-        savepref(emails, passwords, true);
+        savepref(emails, passwords);
+
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (BuildContext context) => StatefulBuilder(
