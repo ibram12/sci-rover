@@ -8,6 +8,7 @@ import 'package:pdf_reader_app/screen/learn.dart';
 import 'package:pdf_reader_app/screen/photo_rover.dart';
 import 'package:flutter/material.dart';
 import 'package:pdf_reader_app/screen/who_we.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import '../jus/jus.dart';
@@ -78,48 +79,6 @@ class _home_pageState extends State<home_page> {
               width: double.infinity,
               height: 255,
             ),
-            // Expanded(
-            //   child: ListView.builder(
-            //     itemCount: Shield.length,
-            //     itemBuilder: ((context, index) {
-            //       return Card(
-            //         child: SizedBox(
-            //           height: 90,
-            //           child: TextButton(
-            //             onPressed: () {
-            //               Navigator.of(context).push(
-            //                 MaterialPageRoute(
-            //                   builder: (BuildContext context) =>
-            //                       StatefulBuilder(
-            //                     builder: (BuildContext context, setState) =>
-            //                         Shield[index].page,
-            //                   ),
-            //                 ),
-            //               );
-            //             },
-            //             child: Row(
-            //               children: [
-            //                 Icon(
-            //                   Shield[index].image,
-            //                   color: Colors.brown,
-            //                 ),
-            //                 const SizedBox(width: 20),
-            //                 Text(
-            //                   Shield[index].title,
-            //                   style: const TextStyle(
-            //                     fontWeight: FontWeight.bold,
-            //                     fontSize: 30,
-            //                     color: Colors.brown,
-            //                   ),
-            //                 ),
-            //               ],
-            //             ),
-            //           ),
-            //         ),
-            //       );
-            //     }),
-            //   ),
-            // ),
             Card(
                 child: SizedBox(
               height: 90,
@@ -238,7 +197,12 @@ class _home_pageState extends State<home_page> {
               child: SizedBox(
                 height: 90,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // Navigator.of(context).push(MaterialPageRoute(
+                    //     builder: (BuildContext context) => StatefulBuilder(
+                    //         builder: (BuildContext context, setState) =>
+                    //             const SignUP())));
+                  },
                   child: Row(
                     children: const [
                       Icon(
