@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:pdf_reader_app/screen/Sign/Sign_In.dart';
 import 'package:pdf_reader_app/screen/Sign/Sign_Up.dart';
 import 'package:pdf_reader_app/screen/learn.dart';
 import 'package:pdf_reader_app/screen/photo_rover.dart';
@@ -67,6 +68,21 @@ class _home_pageState extends State<home_page> {
         },
       ),
     );
+  }
+
+  getpref() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+
+    if (preferences.getBool('vir') == null ||
+        preferences.getBool('vir') == false) {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (BuildContext context) => StatefulBuilder(
+            builder: (BuildContext context, setState) => const SignIn(),
+          ),
+        ),
+      );
+    }
   }
 
   Widget create() {
@@ -229,12 +245,8 @@ class _home_pageState extends State<home_page> {
     );
   }
 
-  @override
-  void initState() {
-    // TODO: implement initState
-
-    topic();
-    FirebaseMessaging.onMessage.listen((event) {
+  massag() async {
+    await FirebaseMessaging.onMessage.listen((event) {
       AwesomeDialog(
           context: context,
           title: "${event.notification!.title}",
@@ -243,8 +255,15 @@ class _home_pageState extends State<home_page> {
             textAlign: TextAlign.center,
           )).show();
     });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    getpref();
+    topic();
+    massag();
     super.initState();
-    // signInWithGoogle();
   }
 
   @override

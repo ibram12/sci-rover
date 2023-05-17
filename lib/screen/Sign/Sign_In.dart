@@ -63,26 +63,6 @@ class _SignInState extends State<SignIn> {
     }
   }
 
-  getpref() async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-
-    if (preferences.getBool('vir') == true) {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (BuildContext context) => StatefulBuilder(
-            builder: (BuildContext context, setState) => const home_page(),
-          ),
-        ),
-      );
-    }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    getpref();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
