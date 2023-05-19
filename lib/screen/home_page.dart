@@ -8,6 +8,7 @@ import 'package:pdf_reader_app/screen/Sign/Sign_Up.dart';
 import 'package:pdf_reader_app/screen/learn.dart';
 import 'package:pdf_reader_app/screen/photo_rover.dart';
 import 'package:flutter/material.dart';
+import 'package:pdf_reader_app/screen/videos/sammer.dart';
 import 'package:pdf_reader_app/screen/who_we.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -214,10 +215,10 @@ class _home_pageState extends State<home_page> {
                 height: 90,
                 child: TextButton(
                   onPressed: () {
-                    // Navigator.of(context).push(MaterialPageRoute(
-                    //     builder: (BuildContext context) => StatefulBuilder(
-                    //         builder: (BuildContext context, setState) =>
-                    //             const SignUP())));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => StatefulBuilder(
+                            builder: (BuildContext context, setState) =>
+                                const Sammer())));
                   },
                   child: Row(
                     children: const [
