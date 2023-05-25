@@ -114,7 +114,7 @@ class _home_pageState extends State<home_page> {
                       ),
                       SizedBox(width: 20),
                       Text(
-                        "هيكل الوفد",
+                        "هيكل العشيرة",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 30,

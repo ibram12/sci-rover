@@ -34,13 +34,13 @@ List<Product> products = [
     image: "images/Alaa khalid mohamed.png",
     description: " انتظر الاصدار الثالث ",
   ),
-  // Product(
-  //   id: 1,
-  //   title: "القائد احمد رمزي",
-  //   subTitle: "رائد اكبر العشيرة",
-  //   image: "images/ra.png",
-  //   description: " انتظر الاصدار الثالث قبل الدورة الكشفية",
-  // ),
+  Product(
+    id: 1,
+    title: "القائد احمد رمزي",
+    subTitle: "رائد اكبر العشيرة",
+    image: "images/ra.png",
+    description: " انتظر الاصدار الثالث قبل الدورة الكشفية",
+  ),
 
   // Product(
   //   id: 2,

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import '../../lists/LinkVideos.dart';
-import '../links.dart';
 
 class VideosSammer extends StatefulWidget {
   const VideosSammer({
@@ -47,21 +46,57 @@ class _VideosSammerState extends State<VideosSammer> {
           children: [
             _player == false
                 ? Container(
-                    height: 250,
+                    height: 270,
+                    child: Center(
+                      child: Column(
+                        children: [
+                          const SizedBox(height: 20),
+                          const Text(
+                            'Science rover 4 ever',
+                            style: TextStyle(
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                              // color: Colors.white,
+                            ),
+                          ),
+                          const SizedBox(height: 40),
+                          Text(
+                            widget.titles,
+                            style: const TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   )
-                : Container(
-                    height: 250,
-                    child: YoutubePlayer(
-                      controller: _controller,
-                      showVideoProgressIndicator: true,
-                      onEnded: (metaData) {
-                        setState(() {
-                          if (_player == true) {
-                            _player = false;
-                          }
-                        });
-                      },
-                    )),
+                : Column(
+                    children: [
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      SizedBox(
+                        height: 280,
+                        child: YoutubePlayer(
+                          controller: _controller,
+                          showVideoProgressIndicator: true,
+                          onEnded: (metaData) {
+                            setState(() {
+                              if (_player == true) {
+                                _player = false;
+                              } else {
+                                _player = true;
+                              }
+                            });
+                          },
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                    ],
+                  ),
             Expanded(
               child: Container(
                 decoration: const BoxDecoration(
@@ -97,7 +132,7 @@ class _VideosSammerState extends State<VideosSammer> {
                         itemCount: widget.links.length,
                         itemBuilder: (context, int index) {
                           return GestureDetector(
-                            onTap: () {
+                            onTap: () async {
                               setState(() {
                                 if (_player == false) {
                                   _player = true;
@@ -108,8 +143,9 @@ class _VideosSammerState extends State<VideosSammer> {
                               _controller = YoutubePlayerController(
                                 initialVideoId: YoutubePlayer.convertUrlToId(
                                     widget.links[index])!,
-                                flags:
-                                    const YoutubePlayerFlags(autoPlay: false),
+                                flags: const YoutubePlayerFlags(
+                                  autoPlay: true,
+                                ),
                               );
                             },
                             child: SizedBox(
@@ -142,21 +178,9 @@ class _VideosSammerState extends State<VideosSammer> {
                                     children: [
                                       Text(
                                         widget.namelinks[index],
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(top: 3.0),
-                                        child: Text(
-                                          linkVideos[index].subTitle,
-                                          style: TextStyle(
-                                            color: Colors.grey[400],
-                                          ),
                                         ),
                                       ),
                                     ],
@@ -180,79 +204,6 @@ class _VideosSammerState extends State<VideosSammer> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        // appBar: AppBar(
-        // elevation: 5,
-        // title:   Text(
-        //   'درع السمر',
-        // ),
-        // centerTitle: true,
-        // backgroundColor: Colors.amber
-
-        // ),
-
-        drawer: Drawer(
-          child: SafeArea(
-            child: Column(
-              children: [
-                Container(
-                  padding: EdgeInsets.only(
-                    top: 20,
-                    bottom: 30,
-                  ),
-                  color: Colors.amber,
-                  child: Center(
-                    child: CircleAvatar(
-                      backgroundColor: Colors.amber,
-                      radius: 70.0,
-                      backgroundImage: AssetImage("images/2022.png"),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: ListView.builder(
-                      itemCount: links.length,
-                      itemBuilder: ((context, index) {
-                        return Container(
-                          padding:
-                              EdgeInsets.only(top: 10, left: 20, right: 20),
-                          height: 70,
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.link,
-                                color: Colors.brown,
-                              ),
-                              SizedBox(width: 0),
-                              TextButton(
-                                onPressed: () async {
-                                  if (!await launchUrl(
-                                    Uri(
-                                        scheme: links[index].scheme,
-                                        host: links[index].host,
-                                        path: links[index].path),
-                                    mode: LaunchMode.externalApplication,
-                                    webViewConfiguration: WebViewConfiguration(
-                                        enableJavaScript: false),
-                                  )) {
-                                    throw 'Could not launch $Uri';
-                                  }
-                                },
-                                child: Text(
-                                  links[index].name,
-                                  style: TextStyle(
-                                      fontSize: 18, color: Colors.brown),
-                                ),
-                              ),
-                            ],
-                          ),
-                        );
-                      })),
-                ),
-              ],
-            ),
-          ),
-        ),
-        body: create());
+    return Scaffold(body: create());
   }
 }
