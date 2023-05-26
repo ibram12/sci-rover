@@ -108,25 +108,25 @@ class _VideosSammerState extends State<VideosSammer> {
                 child: Column(
                   children: [
                     _player == false
-                        ? SizedBox(
+                        ? const SizedBox(
                             height: 20,
                           )
-                        : SizedBox(),
+                        : const SizedBox(),
                     _player == false
                         ? Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 width: 20,
                               ),
                               Text(
                                 widget.titles,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 20,
                                 ),
                               )
                             ],
                           )
-                        : SizedBox(),
+                        : const SizedBox(),
                     Expanded(
                       child: ListView.builder(
                         itemCount: widget.links.length,
@@ -153,7 +153,7 @@ class _VideosSammerState extends State<VideosSammer> {
                               // width: 200,
                               child: Row(
                                 children: [
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 5,
                                   ),
                                   Container(
@@ -168,7 +168,7 @@ class _VideosSammerState extends State<VideosSammer> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10,
                                   ),
                                   Column(

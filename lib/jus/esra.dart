@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pdf_reader_app/jus/parts.dart';
 import 'package:pdf_reader_app/jus/csave.dart';
-import 'package:url_launcher/url_launcher.dart';
-import '../screen/links.dart';
+import '../widget/card_links_college.dart';
 
 class esra extends StatefulWidget {
   const esra({super.key});
@@ -35,69 +34,7 @@ class _esra extends State<esra> {
           ],
           centerTitle: true,
           backgroundColor: Colors.amber),
-      drawer: Drawer(
-        child: SafeArea(
-          child: Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.only(
-                  top: 20,
-                  bottom: 30,
-                ),
-                color: Colors.amber,
-                child: const Center(
-                  child: CircleAvatar(
-                    backgroundColor: Colors.amber,
-                    radius: 70.0,
-                    backgroundImage: AssetImage("images/2022.png"),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: ListView.builder(
-                    itemCount: links.length,
-                    itemBuilder: ((context, index) {
-                      return Container(
-                        padding:
-                            const EdgeInsets.only(top: 10, left: 20, right: 20),
-                        height: 70,
-                        child: Row(
-                          children: [
-                            const Icon(
-                              Icons.link,
-                              color: Colors.brown,
-                            ),
-                            const SizedBox(width: 0),
-                            TextButton(
-                              onPressed: () async {
-                                if (!await launchUrl(
-                                  Uri(
-                                      scheme: links[index].scheme,
-                                      host: links[index].host,
-                                      path: links[index].path),
-                                  mode: LaunchMode.externalApplication,
-                                  webViewConfiguration:
-                                      const WebViewConfiguration(
-                                          enableJavaScript: false),
-                                )) {
-                                  throw 'Could not launch $Uri';
-                                }
-                              },
-                              child: Text(
-                                links[index].name,
-                                style: const TextStyle(
-                                    fontSize: 18, color: Colors.brown),
-                              ),
-                            ),
-                          ],
-                        ),
-                      );
-                    })),
-              ),
-            ],
-          ),
-        ),
-      ),
+      drawer: const cardDrawer(),
       body: SafeArea(
         child: Column(
           children: [

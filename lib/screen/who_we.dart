@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pdf_reader_app/screen/carrd.dart';
 import 'package:pdf_reader_app/screen/product.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'DetailsScreen.dart';
-import 'links.dart';
 
+import '../widget/card_links_college.dart';
+import 'DetailsScreen.dart';
+
+// ignore: camel_case_types
 class who_we extends StatefulWidget {
   const who_we({Key? key}) : super(key: key);
 
@@ -12,6 +13,7 @@ class who_we extends StatefulWidget {
   State<who_we> createState() => _who_weState();
 }
 
+// ignore: camel_case_types
 class _who_weState extends State<who_we> {
   @override
   Widget build(BuildContext context) {
@@ -34,69 +36,7 @@ class _who_weState extends State<who_we> {
           ],
           centerTitle: true,
           backgroundColor: Colors.amber),
-      drawer: Drawer(
-        child: SafeArea(
-          child: Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.only(
-                  top: 20,
-                  bottom: 30,
-                ),
-                color: Colors.amber,
-                child: const Center(
-                  child: CircleAvatar(
-                    backgroundColor: Colors.amber,
-                    radius: 70.0,
-                    backgroundImage: AssetImage("images/2022.png"),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: ListView.builder(
-                    itemCount: links.length,
-                    itemBuilder: ((context, index) {
-                      return Container(
-                        padding:
-                            const EdgeInsets.only(top: 10, left: 20, right: 20),
-                        height: 70,
-                        child: Row(
-                          children: [
-                            const Icon(
-                              Icons.link,
-                              color: Colors.brown,
-                            ),
-                            const SizedBox(width: 0),
-                            TextButton(
-                              onPressed: () async {
-                                if (!await launchUrl(
-                                  Uri(
-                                      scheme: links[index].scheme,
-                                      host: links[index].host,
-                                      path: links[index].path),
-                                  mode: LaunchMode.externalApplication,
-                                  webViewConfiguration:
-                                      const WebViewConfiguration(
-                                          enableJavaScript: false),
-                                )) {
-                                  throw 'Could not launch $Uri';
-                                }
-                              },
-                              child: Text(
-                                links[index].name,
-                                style: const TextStyle(
-                                    fontSize: 18, color: Colors.brown),
-                              ),
-                            ),
-                          ],
-                        ),
-                      );
-                    })),
-              ),
-            ],
-          ),
-        ),
-      ),
+      drawer: const cardDrawer(),
       body: SafeArea(
           child: Column(
         children: [

@@ -26,7 +26,7 @@ class _SammerState extends State<Sammer> {
         )),
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: 250,
               child: Center(
                 child: Column(
@@ -161,12 +161,6 @@ class _SammerState extends State<Sammer> {
       ),
     );
   }
-
-  // @override
-  // void initState() {
-  //   // TODO: implement initState
-  //   super.initState();
-  // }
 
   @override
   Widget build(BuildContext context) {

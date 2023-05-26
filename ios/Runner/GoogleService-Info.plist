@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>287119367806-tu1prgb00gb02dj3862ucsincbku8qfe.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.287119367806-tu1prgb00gb02dj3862ucsincbku8qfe</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>287119367806-astn72jrugnm8pabgtbou32tnjrk6k4h.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC7p6nUpKMFcuQJFGPD8_uqOS-4wqBPhwQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>287119367806</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.examble.PDFReaderAppFlutterMaster</string>
+	<key>PROJECT_ID</key>
+	<string>rover-b40ba</string>
+	<key>STORAGE_BUCKET</key>
+	<string>rover-b40ba.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:287119367806:ios:15661cf41939a6050e022f</string>
+</dict>
+</plist>

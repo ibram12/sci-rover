@@ -146,11 +146,11 @@ List<Product> products = [
   //   image: "images/mt.png",
   //   description: " انتظر الاصدار الثالث قبل الدورة الكشفية",
   // ),
-  // Product(
-  //   id: 8,
-  //   title: "القائد ابرام اكرام",
-  //   subTitle: "مسئول التطبيق",
-  //   image: "images/ib.png",
-  //   description: " انتظر الاصدار الثالث قبل الدورة الكشفية",
-  // ),
+  Product(
+    id: 8,
+    title: "القائد ابرام اكرام",
+    subTitle: "مسئول التطبيق",
+    image: "images/ib.png",
+    description: " انتظر الاصدار الثالث قبل الدورة الكشفية",
+  ),
 ];
