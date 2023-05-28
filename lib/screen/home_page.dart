@@ -11,9 +11,11 @@ import 'package:pdf_reader_app/screen/videos/sammer.dart';
 import 'package:pdf_reader_app/screen/who_we.dart';
 import 'package:pdf_reader_app/widget/card_home_page.dart';
 import 'package:pdf_reader_app/widget/card_links_college.dart';
+import 'package:pdf_reader_app/widget/custom_Card_chat.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:google_sign_in/google_sign_in.dart';
+import '../chat/chat.dart';
 import '../jus/jus.dart';
 import 'notv.dart';
 
@@ -85,9 +87,10 @@ class _home_pageState extends State<home_page> {
     );
   }
 
+  late var email;
   getpref() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
-
+    email = preferences.getString('email');
     if (preferences.getBool('vir') == null ||
         preferences.getBool('vir') == false) {
       Navigator.of(context).push(
@@ -99,6 +102,12 @@ class _home_pageState extends State<home_page> {
       );
     }
   }
+
+//   getprefemail() async {
+//     SharedPreferences preferences = await SharedPreferences.getInstance();
+// email=preferences.getString('email')
+//     return email;
+//   }
 
   Widget create() {
     return SafeArea(
@@ -147,30 +156,50 @@ class _home_pageState extends State<home_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            elevation: 5,
-            title: const Text(
-              'Rover.sci',
-            ),
-            // actions: [
-            //   IconButton(
-            //     padding: const EdgeInsets.only(right: 20),
-            //     icon: const Icon(
-            //       Icons.notifications_active,
-            //       color: Colors.black,
-            //       // size: 35,
-            //     ),
-            //     onPressed: () {
-            //       Navigator.of(context).push(MaterialPageRoute(
-            //           builder: (BuildContext context) => StatefulBuilder(
-            //               builder: (BuildContext context, setState) =>
-            //                   const notv())));
-            //     },
-            //   ),
-            // ],
-            centerTitle: true,
-            backgroundColor: Colors.amber),
-        drawer: const cardDrawer(),
-        body: create());
+      appBar: AppBar(
+          elevation: 5,
+          title: const Text(
+            'Rover.sci',
+          ),
+          // actions: [
+          //   IconButton(
+          //     padding: const EdgeInsets.only(right: 20),
+          //     icon: const Icon(
+          //       Icons.notifications_active,
+          //       color: Colors.black,
+          //       // size: 35,
+          //     ),
+          //     onPressed: () {
+          //       Navigator.of(context).push(MaterialPageRoute(
+          //           builder: (BuildContext context) => StatefulBuilder(
+          //               builder: (BuildContext context, setState) =>
+          //                   const notv())));
+          //     },
+          //   ),
+          // ],
+          centerTitle: true,
+          backgroundColor: Colors.amber),
+      drawer: const cardDrawer(),
+      body: create(),
+      floatingActionButton: FloatingActionButton(
+          child: const Icon(
+            Icons.forum,
+            color: Colors.brown,
+            size: 35,
+          ),
+          onPressed: () async {
+            if (email != null) {
+              await Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => StatefulBuilder(
+                      builder: (BuildContext context, setState) => roverChat(
+                            email1: email,
+                          ))));
+            } else {
+              await Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => StatefulBuilder(
+                      builder: (BuildContext context, setState) => SignIn())));
+            }
+          }),
+    );
   }
 }

@@ -29,6 +29,8 @@ dependencies:
   chips_choice: ^3.0.0
   shared_preferences: ^2.1.1
   youtube_player_flutter: ^8.1.2
+  # modal_progress_hud_nsn: ^0.3.0
+  
 
 dev_dependencies:
   flutter_test:
