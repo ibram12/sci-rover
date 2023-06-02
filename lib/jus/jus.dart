@@ -3,6 +3,7 @@ import '../widget/card_links_college.dart';
 import 'mathamer.dart';
 import 'save.dart';
 
+// ignore: camel_case_types
 class jus extends StatefulWidget {
   const jus({super.key});
 
@@ -10,6 +11,7 @@ class jus extends StatefulWidget {
   State<jus> createState() => _jusState();
 }
 
+// ignore: camel_case_types
 class _jusState extends State<jus> {
   @override
   Widget build(BuildContext context) {

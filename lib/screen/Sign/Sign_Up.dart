@@ -84,246 +84,249 @@ class _SignUPState extends State<SignUP> {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                padding: const EdgeInsets.only(
-                  top: 20,
-                  bottom: 10,
-                ),
-                // color: Colors.amber,
-                child: const Center(
-                  child: CircleAvatar(
-                    // backgroundColor: Colors.amber,
-                    radius: 70.0,
-                    backgroundImage: AssetImage("images/2022.png"),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 100),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(
+                    top: 20,
+                    bottom: 10,
                   ),
-                ),
-              ),
-              const Text(
-                'Sign up',
-                style: TextStyle(fontSize: 30),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              // Padding(
-              //   padding:
-              //       const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              //   child: TextField(
-              //     textAlign: TextAlign.left,
-              //     onChanged: (value) {
-              //       names = value;
-              //     },
-              //     decoration: const InputDecoration(
-              //       hintText: "full name",
-              //       contentPadding:
-              //           EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              //       border: OutlineInputBorder(
-              //         borderRadius: BorderRadius.all(
-              //           Radius.circular(10),
-              //         ),
-              //       ),
-              //       enabledBorder: OutlineInputBorder(
-              //         borderSide: BorderSide(
-              //           color: Colors.amber,
-              //           width: 1,
-              //         ),
-              //         borderRadius: BorderRadius.all(
-              //           Radius.circular(10),
-              //         ),
-              //       ),
-              //     ),
-              //   ),
-              // ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                child: TextField(
-                  textAlign: TextAlign.left,
-                  onChanged: (value) {
-                    emails = value;
-                  },
-                  decoration: const InputDecoration(
-                    hintText: "Email",
-                    contentPadding:
-                        EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.amber,
-                        width: 1,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
+                  // color: Colors.amber,
+                  child: const Center(
+                    child: CircleAvatar(
+                      // backgroundColor: Colors.amber,
+                      radius: 70.0,
+                      backgroundImage: AssetImage("images/2022.png"),
                     ),
                   ),
                 ),
-              ),
-              // Padding(
-              //   padding:
-              //       const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              //   child: TextField(
-              //     textAlign: TextAlign.left,
-              //     onChanged: (value) {
-              //       phones = value;
-              //     },
-              //     decoration: const InputDecoration(
-              //       hintText: "phone number",
-              //       contentPadding:
-              //           EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              //       border: OutlineInputBorder(
-              //         borderRadius: BorderRadius.all(
-              //           Radius.circular(10),
-              //         ),
-              //       ),
-              //       enabledBorder: OutlineInputBorder(
-              //         borderSide: BorderSide(
-              //           color: Colors.amber,
-              //           width: 1,
-              //         ),
-              //         borderRadius: BorderRadius.all(
-              //           Radius.circular(10),
-              //         ),
-              //       ),
-              //     ),
-              //   ),
-              // ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                child: TextField(
-                  textAlign: TextAlign.left,
-                  onChanged: (value) {
-                    passwords = value;
-                  },
-                  decoration: const InputDecoration(
-                    hintText: "password",
-                    contentPadding:
-                        EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.amber,
-                        width: 1,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                    ),
-                  ),
+                const Text(
+                  'Sign up',
+                  style: TextStyle(fontSize: 30),
                 ),
-              ),
-              // Container(
-              //   padding: const EdgeInsets.only(
-              //     left: 20,
-
-              //   ),
-              //   child: Row(
-              //     mainAxisAlignment: MainAxisAlignment.end,
-              //     children: [
-
-              //       ChipsChoice<String>.single(
-              //         value: levels,
-              //         onChanged: (val) => setState(() => levels = val ),
-              //         choiceItems: C2Choice.listFrom<String, String>(
-              //           source: options,
-              //           value: (i, v) => options[i],
-              //           label: (i, v) => v,
-              //         ),
-              //       ),
-              //       const Text(':level',
-              //       ),
-
-              //     ],
-              //   ),
-              // ),
-              // Container(
-              //   padding: const EdgeInsets.only(
-              //     left: 20,
-
-              //   ),
-              //   child: Row(
-              //     mainAxisAlignment: MainAxisAlignment.end,
-              //     children: [
-
-              //       ChipsChoice<String>.single(
-              //         value: divisions,
-              //         onChanged: (val) => setState(() => divisions = val ),
-              //         choiceItems: C2Choice.listFrom<String, String>(
-              //           source: options2,
-              //           value: (i, v) => options2[i],
-              //           label: (i, v) => v,
-              //         ),
-              //       ),
-              //      const Text(':division',
-              //       ),
-
-              //     ],
-              //   ),
-              // ),
-              // Container(
-              //   padding: const EdgeInsets.only(
-              //     left: 20,
-
-              //   ),
-              //   child: Row(
-              //     mainAxisAlignment: MainAxisAlignment.end,
-              //     children: [
-
-              //       ChipsChoice<String>.single(
-              //         value: departments,
-              //         onChanged: (val) => setState(() => departments = val ),
-              //         choiceItems: C2Choice.listFrom<String, String>(
-              //           source: options2,
-              //           value: (i, v) => options2[i],
-              //           label: (i, v) => v,
-              //         ),
-              //       ),
-              //       const Text(':department',
-              //       ),
-
-              //     ],
-              //   ),
-              // ),
-              ElevatedButton(
-                onPressed: () async {
-                  adduser1();
-                },
-                style: ElevatedButton.styleFrom(
+                const SizedBox(
+                  height: 10,
+                ),
+                // Padding(
+                //   padding:
+                //       const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                //   child: TextField(
+                //     textAlign: TextAlign.left,
+                //     onChanged: (value) {
+                //       names = value;
+                //     },
+                //     decoration: const InputDecoration(
+                //       hintText: "full name",
+                //       contentPadding:
+                //           EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                //       border: OutlineInputBorder(
+                //         borderRadius: BorderRadius.all(
+                //           Radius.circular(10),
+                //         ),
+                //       ),
+                //       enabledBorder: OutlineInputBorder(
+                //         borderSide: BorderSide(
+                //           color: Colors.amber,
+                //           width: 1,
+                //         ),
+                //         borderRadius: BorderRadius.all(
+                //           Radius.circular(10),
+                //         ),
+                //       ),
+                //     ),
+                //   ),
+                // ),
+                Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 50, vertical: 5),
-                  backgroundColor: Colors.amber,
-                  textStyle: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontStyle: FontStyle.normal),
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                  child: TextField(
+                    textAlign: TextAlign.left,
+                    onChanged: (value) {
+                      emails = value;
+                    },
+                    decoration: const InputDecoration(
+                      hintText: "Email",
+                      contentPadding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.amber,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
-                child: const Text('sign up'),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TextButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: const Text("sign in")),
-                  const Text('you have accont')
-                ],
-              )
-            ],
+                // Padding(
+                //   padding:
+                //       const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                //   child: TextField(
+                //     textAlign: TextAlign.left,
+                //     onChanged: (value) {
+                //       phones = value;
+                //     },
+                //     decoration: const InputDecoration(
+                //       hintText: "phone number",
+                //       contentPadding:
+                //           EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                //       border: OutlineInputBorder(
+                //         borderRadius: BorderRadius.all(
+                //           Radius.circular(10),
+                //         ),
+                //       ),
+                //       enabledBorder: OutlineInputBorder(
+                //         borderSide: BorderSide(
+                //           color: Colors.amber,
+                //           width: 1,
+                //         ),
+                //         borderRadius: BorderRadius.all(
+                //           Radius.circular(10),
+                //         ),
+                //       ),
+                //     ),
+                //   ),
+                // ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                  child: TextField(
+                    textAlign: TextAlign.left,
+                    onChanged: (value) {
+                      passwords = value;
+                    },
+                    decoration: const InputDecoration(
+                      hintText: "password",
+                      contentPadding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.amber,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                // Container(
+                //   padding: const EdgeInsets.only(
+                //     left: 20,
+
+                //   ),
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.end,
+                //     children: [
+
+                //       ChipsChoice<String>.single(
+                //         value: levels,
+                //         onChanged: (val) => setState(() => levels = val ),
+                //         choiceItems: C2Choice.listFrom<String, String>(
+                //           source: options,
+                //           value: (i, v) => options[i],
+                //           label: (i, v) => v,
+                //         ),
+                //       ),
+                //       const Text(':level',
+                //       ),
+
+                //     ],
+                //   ),
+                // ),
+                // Container(
+                //   padding: const EdgeInsets.only(
+                //     left: 20,
+
+                //   ),
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.end,
+                //     children: [
+
+                //       ChipsChoice<String>.single(
+                //         value: divisions,
+                //         onChanged: (val) => setState(() => divisions = val ),
+                //         choiceItems: C2Choice.listFrom<String, String>(
+                //           source: options2,
+                //           value: (i, v) => options2[i],
+                //           label: (i, v) => v,
+                //         ),
+                //       ),
+                //      const Text(':division',
+                //       ),
+
+                //     ],
+                //   ),
+                // ),
+                // Container(
+                //   padding: const EdgeInsets.only(
+                //     left: 20,
+
+                //   ),
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.end,
+                //     children: [
+
+                //       ChipsChoice<String>.single(
+                //         value: departments,
+                //         onChanged: (val) => setState(() => departments = val ),
+                //         choiceItems: C2Choice.listFrom<String, String>(
+                //           source: options2,
+                //           value: (i, v) => options2[i],
+                //           label: (i, v) => v,
+                //         ),
+                //       ),
+                //       const Text(':department',
+                //       ),
+
+                //     ],
+                //   ),
+                // ),
+                ElevatedButton(
+                  onPressed: () async {
+                    adduser1();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 50, vertical: 5),
+                    backgroundColor: Colors.amber,
+                    textStyle: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontStyle: FontStyle.normal),
+                  ),
+                  child: const Text('sign up'),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Text("sign in")),
+                    const Text('you have accont')
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),

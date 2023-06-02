@@ -4,6 +4,7 @@ import 'package:pdf_reader_app/jus/csave.dart';
 
 import '../widget/card_links_college.dart';
 
+// ignore: camel_case_types
 class kahf extends StatefulWidget {
   const kahf({super.key});
 
@@ -11,6 +12,7 @@ class kahf extends StatefulWidget {
   State<kahf> createState() => _kahf();
 }
 
+// ignore: camel_case_types
 class _kahf extends State<kahf> {
   @override
   Widget build(BuildContext context) {

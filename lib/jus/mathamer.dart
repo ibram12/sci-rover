@@ -4,6 +4,7 @@ import 'package:pdf_reader_app/jus/csave.dart';
 
 import '../widget/card_links_college.dart';
 
+// ignore: camel_case_types
 class mathamer extends StatefulWidget {
   const mathamer({super.key});
 
@@ -11,6 +12,7 @@ class mathamer extends StatefulWidget {
   State<mathamer> createState() => _mathamer();
 }
 
+// ignore: camel_case_types
 class _mathamer extends State<mathamer> {
   @override
   Widget build(BuildContext context) {

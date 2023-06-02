@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pdf_reader_app/screen/product.dart';
+import 'package:pdf_reader_app/screen/dataRover.dart';
 
+// ignore: camel_case_types
 class carrd extends StatelessWidget {
   const carrd({
     Key? key,
@@ -10,7 +11,7 @@ class carrd extends StatelessWidget {
   }) : super(key: key);
 
   final int itemIndex;
-  final Product product;
+  final dataRover product;
   final Function press;
 
   @override
@@ -48,7 +49,7 @@ class carrd extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   height: 160,
                   width: 200,
-                  child: Image.asset(
+                  child: Image.network(
                     product.image,
                     fit: BoxFit.cover,
                   ),

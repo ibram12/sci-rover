@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:pdf_reader_app/screen/Sign/Sign_In.dart';
 import 'package:pdf_reader_app/screen/learn.dart';
 import 'package:pdf_reader_app/screen/photo_rover.dart';
@@ -11,14 +12,16 @@ import 'package:pdf_reader_app/screen/videos/sammer.dart';
 import 'package:pdf_reader_app/screen/who_we.dart';
 import 'package:pdf_reader_app/widget/card_home_page.dart';
 import 'package:pdf_reader_app/widget/card_links_college.dart';
-import 'package:pdf_reader_app/widget/custom_Card_chat.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:google_sign_in/google_sign_in.dart';
 import '../chat/chat.dart';
+import '../chat/replychat.dart';
 import '../jus/jus.dart';
 import 'notv.dart';
 
+// ignore: camel_case_types
 class home_page extends StatefulWidget {
   const home_page({super.key});
 
@@ -26,9 +29,10 @@ class home_page extends StatefulWidget {
   State<home_page> createState() => _home_pageState();
 }
 
+// ignore: camel_case_types
 class _home_pageState extends State<home_page> {
   List<String> title = [
-    'هيكل العشيرة',
+    'عشيرة علوم',
     'الدرع الكشفي',
     'الدرع الديني',
     'معرض علوم ',
@@ -40,7 +44,7 @@ class _home_pageState extends State<home_page> {
     Icons.auto_stories_rounded,
     Icons.book,
     Icons.photo,
-    Icons.auto_stories_rounded,
+    Icons.music_note,
   ];
   Future<UserCredential> signInWithGoogle() async {
     // Trigger the authentication flow
@@ -87,12 +91,14 @@ class _home_pageState extends State<home_page> {
     );
   }
 
+  // ignore: prefer_typing_uninitialized_variables
   late var email;
   getpref() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     email = preferences.getString('email');
     if (preferences.getBool('vir') == null ||
         preferences.getBool('vir') == false) {
+      // ignore: use_build_context_synchronously
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (BuildContext context) => StatefulBuilder(
@@ -116,7 +122,6 @@ class _home_pageState extends State<home_page> {
           const Image(
             image: AssetImage('images/h1.jpg'),
             width: double.infinity,
-            height: 255,
           ),
           Expanded(
             child: ListView.builder(
@@ -197,7 +202,8 @@ class _home_pageState extends State<home_page> {
             } else {
               await Navigator.of(context).push(MaterialPageRoute(
                   builder: (BuildContext context) => StatefulBuilder(
-                      builder: (BuildContext context, setState) => SignIn())));
+                      builder: (BuildContext context, setState) =>
+                          const SignIn())));
             }
           }),
     );

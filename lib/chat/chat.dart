@@ -1,12 +1,16 @@
+import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:pdf_reader_app/chat/masseges.dart';
 import 'package:pdf_reader_app/screen/Sign/Sign_In.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'package:http/http.dart' as http;
 import '../widget/card_links_college.dart';
 import '../widget/custom_Card_chat.dart';
 
+// ignore: camel_case_types
 class roverChat extends StatefulWidget {
   const roverChat({super.key, required this.email1});
   final String email1;
@@ -15,12 +19,16 @@ class roverChat extends StatefulWidget {
   State<roverChat> createState() => _roverChatState();
 }
 
+// ignore: camel_case_types
 class _roverChatState extends State<roverChat> {
   TextEditingController controller = TextEditingController();
 
   late CollectionReference mass;
   late String massege;
+  // ignore: prefer_typing_uninitialized_variables
   var email;
+
+  @override
   void initState() {
     // TODO: implement initState
     getpref();
@@ -37,24 +45,44 @@ class _roverChatState extends State<roverChat> {
     return email;
   }
 
+  Future<void> addemail() async {
+    if (email != null) {
+      CollectionReference mass1 =
+          FirebaseFirestore.instance.collection('masseges');
+
+      mass1.doc(email).set({
+        'timenow': DateTime.now(),
+        'email': email,
+      })
+          // .then((value) => print("massege Added"))
+          // .catchError((error) => print("Failed to add user: $error")
+          //)
+          ;
+    } else {
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (BuildContext context) => StatefulBuilder(
+              builder: (BuildContext context, setState) => const SignIn())));
+    }
+  }
+
   Future<void> addmass(massege) async {
     if (email != null) {
       CollectionReference mass = FirebaseFirestore.instance
           .collection('masseges')
           .doc(email)
           .collection('masseges1');
-      mass
-          .add({
-            'massege': massege,
-            'timenow': DateTime.now(),
-            'email': email,
-          })
-          .then((value) => print("massege Added"))
-          .catchError((error) => print("Failed to add user: $error"));
+      mass.add({
+        'massege': massege,
+        'timenow': DateTime.now(),
+        'email': email,
+      })
+          // .then((value) => print("massege Added"))
+          // .catchError((error) => print("Failed to add user: $error"))
+          ;
     } else {
       Navigator.of(context).push(MaterialPageRoute(
           builder: (BuildContext context) => StatefulBuilder(
-              builder: (BuildContext context, setState) => SignIn())));
+              builder: (BuildContext context, setState) => const SignIn())));
     }
   }
 
@@ -69,7 +97,7 @@ class _roverChatState extends State<roverChat> {
             for (int i = 0; i < snapshot.data!.docs.length; i++) {
               massegeslist.add(Massege.fromJSON(snapshot.data!.docs[i]));
             }
-            print(massegeslist);
+
             return Scaffold(
               appBar: AppBar(
                   elevation: 5,
@@ -105,6 +133,7 @@ class _roverChatState extends State<roverChat> {
                         massege = value;
                       },
                       onSubmitted: (massege) {
+                        addemail();
                         addmass(massege);
                         controller.clear();
                       },
@@ -112,6 +141,7 @@ class _roverChatState extends State<roverChat> {
                         hintText: 'اكتب الرسالة',
                         suffixIcon: IconButton(
                           onPressed: () {
+                            addemail();
                             addmass(massege);
                             controller.clear();
                           },

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import '../../lists/LinkVideos.dart';
 
 class VideosSammer extends StatefulWidget {
   const VideosSammer({
@@ -9,11 +8,13 @@ class VideosSammer extends StatefulWidget {
     required this.links,
     required this.namelinks,
     required this.titles,
+    required this.image,
   }) : super(key: key);
 
-  final List<String> links;
-  final List<String> namelinks;
+  final List<dynamic> links;
+  final List<dynamic> namelinks;
   final String titles;
+  final String image;
 
   @override
   State<VideosSammer> createState() => _VideosSammerState();
@@ -81,6 +82,7 @@ class _VideosSammerState extends State<VideosSammer> {
                         child: YoutubePlayer(
                           controller: _controller,
                           showVideoProgressIndicator: true,
+                          progressIndicatorColor: Colors.blueAccent,
                           onEnded: (metaData) {
                             setState(() {
                               if (_player == true) {
@@ -144,7 +146,13 @@ class _VideosSammerState extends State<VideosSammer> {
                                 initialVideoId: YoutubePlayer.convertUrlToId(
                                     widget.links[index])!,
                                 flags: const YoutubePlayerFlags(
+                                  mute: false,
                                   autoPlay: true,
+                                  disableDragSeek: false,
+                                  loop: false,
+                                  isLive: false,
+                                  forceHD: false,
+                                  hideThumbnail: true,
                                 ),
                               );
                             },
@@ -162,8 +170,8 @@ class _VideosSammerState extends State<VideosSammer> {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
                                       image: DecorationImage(
-                                        image: AssetImage(
-                                          linkVideos[1].image,
+                                        image: NetworkImage(
+                                          widget.image,
                                         ),
                                       ),
                                     ),

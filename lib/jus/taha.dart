@@ -4,6 +4,7 @@ import 'package:pdf_reader_app/jus/parts.dart';
 
 import '../widget/card_links_college.dart';
 
+// ignore: camel_case_types
 class taha extends StatefulWidget {
   const taha({super.key});
 
@@ -11,6 +12,7 @@ class taha extends StatefulWidget {
   State<taha> createState() => _taha();
 }
 
+// ignore: camel_case_types
 class _taha extends State<taha> {
   @override
   Widget build(BuildContext context) {

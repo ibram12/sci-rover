@@ -3,6 +3,7 @@ import 'package:pdf_reader_app/screen/ppdf.dart';
 
 import '../widget/card_links_college.dart';
 
+// ignore: camel_case_types
 class learn extends StatefulWidget {
   const learn({super.key});
 

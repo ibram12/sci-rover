@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../widget/card_links_college.dart';
 import 'kahf.dart';
 
+// ignore: camel_case_types
 class save extends StatefulWidget {
   const save({super.key});
 
@@ -13,6 +14,7 @@ class save extends StatefulWidget {
   State<save> createState() => _saveState();
 }
 
+// ignore: camel_case_types
 class _saveState extends State<save> {
   @override
   Widget build(BuildContext context) {

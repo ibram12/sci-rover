@@ -4,6 +4,7 @@ import 'package:pdf_reader_app/jus/csave.dart';
 
 import '../widget/card_links_college.dart';
 
+// ignore: camel_case_types
 class marim extends StatefulWidget {
   const marim({super.key});
 
@@ -11,6 +12,7 @@ class marim extends StatefulWidget {
   State<marim> createState() => _marim();
 }
 
+// ignore: camel_case_types
 class _marim extends State<marim> {
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,7 @@ class _marim extends State<marim> {
           ],
           centerTitle: true,
           backgroundColor: Colors.amber),
-      drawer: cardDrawer(),
+      drawer: const cardDrawer(),
       body: SafeArea(
         child: Column(
           children: [

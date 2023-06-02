@@ -5,6 +5,7 @@ import 'package:pdf_reader_app/widget/card_links_college.dart';
 import 'carrrd.dart';
 import 'links.dart';
 
+// ignore: camel_case_types
 class m21 extends StatefulWidget {
   const m21({Key? key}) : super(key: key);
 

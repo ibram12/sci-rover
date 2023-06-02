@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:pdf_reader_app/jus/parts.dart';
 
+// ignore: camel_case_types
 class csave extends StatefulWidget {
   const csave({
     Key? key,
@@ -15,6 +16,7 @@ class csave extends StatefulWidget {
   State<csave> createState() => _csave();
 }
 
+// ignore: camel_case_types
 class _csave extends State<csave> {
   final player = AudioPlayer();
   Duration cur = const Duration();

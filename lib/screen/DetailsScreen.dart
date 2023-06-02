@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:pdf_reader_app/screen/product.dart';
+import 'package:pdf_reader_app/screen/dataRover.dart';
 
 import 'DetailsBody.dart';
-class  DetailsScreen extends StatelessWidget {
-  final Product product;
+
+class DetailsScreen extends StatelessWidget {
+  final dataRover product;
   const DetailsScreen({Key? key, required this.product}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       backgroundColor: Colors.amber,
       appBar: detailsAppBar(context),
-      body:
-
-      DetailsBody(
+      body: DetailsBody(
         product: product,
       ),
-
     );
   }
+
   AppBar detailsAppBar(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.grey.shade200,
@@ -42,4 +40,3 @@ class  DetailsScreen extends StatelessWidget {
     );
   }
 }
-

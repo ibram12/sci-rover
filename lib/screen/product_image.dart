@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
 class ProductImage extends StatelessWidget {
   const ProductImage({
     Key? key,
@@ -28,7 +26,7 @@ class ProductImage extends StatelessWidget {
               shape: BoxShape.circle,
             ),
           ),
-          Image.asset(
+          Image.network(
             image,
             height: size.width * 0.75,
             width: size.width * 0.75,

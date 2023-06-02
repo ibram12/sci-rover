@@ -3,6 +3,7 @@ import 'package:pdf_reader_app/jus/parts.dart';
 import 'package:pdf_reader_app/jus/csave.dart';
 import '../widget/card_links_college.dart';
 
+// ignore: camel_case_types
 class esra extends StatefulWidget {
   const esra({super.key});
 
@@ -10,6 +11,7 @@ class esra extends StatefulWidget {
   State<esra> createState() => _esra();
 }
 
+// ignore: camel_case_types
 class _esra extends State<esra> {
   @override
   Widget build(BuildContext context) {
